@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .valentine-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100hv;
+        }
+
+        #yesButton {
+            background-color: rgb(90, 219, 51);
+            margin-top: 10px;
+            border-style: outset;
+            border-width: 5px;
+            border-color: green;
+        }
+
+        #noButton {
+            font-size: 25px;
+            background-color: rgb(246, 47, 17);
+            margin-top: 10px;
+            border-style: outset;
+            border-width: 5px;
+            border-color: rgb(193, 1, 1);
+        }
+    </style>
+    <title>Can u be my pookie?</title>
+</head>
+
+<body>
+    <div id="before"
+        style="width: 100vw; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <img alt="panda with hearts" src="https://i.pinimg.com/564x/3c/72/28/3c722889024368e76d7f79f6b9b4091a.jpg" />
+        <div style="font-size: 25px;">Will you be my valentine?</div>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <button id="yesButton" onclick="YesClicked()">
+                Yes
+            </button>
+            <button id="noButton" style="font-size: 25px; background-color: rgb(246, 47, 17); margin-top: 10px;"
+                onclick="NoClicked();">
+            </button>
+        </div>
+    </div>
+
+    <div id="after"
+        style="width: 100vw; display: none; flex-direction: column; align-items: center; justify-content: center;">
+        <img alt="bears kissing" src="https://i.pinimg.com/originals/00/72/a9/0072a9d486565be41a322bbfb0fdefb3.gif" />
+        <div className="text" style="font-family: cursive;">Ukiiiii anh yeu em vcl :33</div>
+    </div>
+
+    <script>
+        const phrases = [
+            "không",
+            "KHÔNG",
+            "anh cút đi đi",
+            "em có ny rồi",
+            "em không phản bội ny đâu",
+            "nhưng mà nếu như thế thì a buồn đấy :<",
+            "đi mà mthao ơiii",
+            "cho a 1 cơ hội đi mò",
+            "anh yêu em vcl",
+            "plssssssss",
+            "này k cho là anh up clip lên mạng đấy",
+            "sợ chưa",
+            "sợ thế thì ấn có đi",
+            "há há há",
+            "now u will be my valentine <3",
+        ];
+        let noCount = 0;
+        let yesButtonSize = 10;
+        function NoClicked() {
+            document.getElementById("noButton").innerText = phrases[noCount % phrases.length];
+            yesButtonSize += 15;
+            document.getElementById("yesButton").style.fontSize = yesButtonSize + "px";
+            yesButtonBorderWidth = yesButtonSize / 5;
+            document.getElementById("yesButton").style.borderWidth = yesButtonBorderWidth + "px";
+            noCount += 1;
+        }
+        function YesClicked() {
+            document.getElementById("before").style.display = "none";
+            document.getElementById("after").style.display = "flex";
+        }
+        NoClicked();
+    </script>
+</body>
+
+</html>
